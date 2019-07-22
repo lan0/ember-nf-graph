@@ -772,11 +772,11 @@ export default Ember.Component.extend({
   autoScaleXAction: null,
 
   _sendAutoUpdateXAction() {
-    this.sendAction(&#x27;autoScaleXAction&#x27;, this);
+    this.autoScaleXAction(this);
   },
 
   _sendAutoUpdateYAction() {
-    this.sendAction(&#x27;autoScaleYAction&#x27;, this);
+    this.autoScaleYAction(this);
   },
 
   /**
@@ -1277,7 +1277,7 @@ export default Ember.Component.extend({
 
   didBrush: function(e) {
     if(this.get(&#x27;brushAction&#x27;)) {
-      this.sendAction(&#x27;brushAction&#x27;, e);
+      this.brushAction(e);
     }
   },
 
@@ -1286,7 +1286,7 @@ export default Ember.Component.extend({
     document.body.style.setProperty(&#x27;-moz-user-select&#x27;, &#x27;none&#x27;);
     document.body.style.setProperty(&#x27;user-select&#x27;, &#x27;none&#x27;);
     if(this.get(&#x27;brushStartAction&#x27;)) {
-      this.sendAction(&#x27;brushStartAction&#x27;, e);
+      this.brushStartAction(e);
     }
   },
 
@@ -1295,7 +1295,7 @@ export default Ember.Component.extend({
     document.body.style.removeProperty(&#x27;-moz-user-select&#x27;);
     document.body.style.removeProperty(&#x27;user-select&#x27;);
     if(this.get(&#x27;brushEndAction&#x27;)) {
-      this.sendAction(&#x27;brushEndAction&#x27;, e);
+      this.brushEndAction(e);
     }
   },
 

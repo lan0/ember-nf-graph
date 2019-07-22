@@ -224,7 +224,7 @@ export default Ember.Component.extend(HasGraphParent, RequireScaleSource, {
       graph: this.get(&#x27;graph&#x27;),
       originalEvent: e,
     });
-    this.sendAction(&#x27;action&#x27;, context);
+    this.action(context);
   },
 });
 

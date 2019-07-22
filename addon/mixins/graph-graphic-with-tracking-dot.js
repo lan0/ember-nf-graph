@@ -109,7 +109,7 @@ export default Mixin.create({
     this.set('hoverData', this._hovered ? trackedData : null);
 
     if(this.get('didTrack') && trackedData) {
-      this.sendAction('didTrack', {
+      this.didTrack({
         x: trackedData.x,
         y: trackedData.y,
         data: trackedData.data,

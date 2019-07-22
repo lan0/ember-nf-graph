@@ -537,14 +537,14 @@ export default Component.extend({
     @type {string}
     @default null
   */
-  autoScaleXAction: null,
+  autoScaleXAction() {},
 
   _sendAutoUpdateXAction() {
-    this.sendAction('autoScaleXAction', this);
+    this.autoScaleXAction(this);
   },
 
   _sendAutoUpdateYAction() {
-    this.sendAction('autoScaleYAction', this);
+    this.autoScaleYAction(this);
   },
 
   /**
@@ -589,7 +589,7 @@ export default Component.extend({
     @type {string}
     @default null
   */
-  autoScaleYAction: null,
+  autoScaleYAction() {},
 
   /**
     Gets the highest and lowest x values of the graphed data in a two element array.
@@ -1138,7 +1138,7 @@ export default Component.extend({
     @type {String}
     @default null
   */
-  brushStartAction: null,
+  brushStartAction() {},
 
   /**
     The name of the action to trigger when brushing emits a new value
@@ -1146,7 +1146,7 @@ export default Component.extend({
     @type {String}
     @default null
   */
-  brushAction: null,
+  brushAction() {},
 
   /**
     The name of the action to trigger when brushing ends
@@ -1154,7 +1154,7 @@ export default Component.extend({
     @type {String}
     @default null
   */
-  brushEndAction: null,
+  brushEndAction() {},
 
   _setupBrushAction: on('didInsertElement', function(){
     let content = this.$('.nf-graph-content');
@@ -1211,7 +1211,7 @@ export default Component.extend({
 
   didBrush: function(e) {
     if(this.get('brushAction')) {
-      this.sendAction('brushAction', e);
+      this.brushAction(e);
     }
   },
 
@@ -1220,7 +1220,7 @@ export default Component.extend({
     document.body.style.setProperty('-moz-user-select', 'none');
     document.body.style.setProperty('user-select', 'none');
     if(this.get('brushStartAction')) {
-      this.sendAction('brushStartAction', e);
+      this.brushStartAction(e);
     }
   },
 
@@ -1229,7 +1229,7 @@ export default Component.extend({
     document.body.style.removeProperty('-moz-user-select');
     document.body.style.removeProperty('user-select');
     if(this.get('brushEndAction')) {
-      this.sendAction('brushEndAction', e);
+      this.brushEndAction(e);
     }
   },
 

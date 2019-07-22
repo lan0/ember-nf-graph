@@ -228,7 +228,7 @@ export default Ember.Mixin.create({
     this.set(&#x27;hoverData&#x27;, this._hovered ? trackedData : null);
 
     if(this.get(&#x27;didTrack&#x27;)) {
-      this.sendAction(&#x27;didTrack&#x27;, {
+      this.didTrack({
         x: trackedData.x,
         y: trackedData.y,
         data: trackedData.data,

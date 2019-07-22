@@ -280,7 +280,7 @@ export default Ember.Component.extend(HasGraphParent, RegisteredGraphic, DataGra
   actions: {
     nfBarClickBar: function(dataPoint) {
       if(this.get(&#x27;barClick&#x27;)) {
-        this.sendAction(&#x27;barClick&#x27;, {
+        this.barClick({
           data: dataPoint.data,
           x: dataPoint[0],
           y: dataPoint[1],

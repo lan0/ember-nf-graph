@@ -41,7 +41,7 @@ export default Component.extend(DataGraphic, RequireScaleSource, {
 
   actions: {
     itemClicked: function(e) {
-      this.sendAction('action', e);
+      this.action(e);
     },
   },
 });

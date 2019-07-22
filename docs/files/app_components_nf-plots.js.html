@@ -158,7 +158,7 @@ export default Ember.Component.extend(HasGraphParent, DataGraphic, RequireScaleS
 
   actions: {
     itemClicked: function(e) {
-      this.sendAction(&#x27;action&#x27;, e);
+      this.action(e);
     },
   },
 });

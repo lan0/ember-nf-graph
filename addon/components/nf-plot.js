@@ -115,6 +115,6 @@ export default Component.extend(RequireScaleSource, {
       graph: this.get('graph'),
       originalEvent: e,
     });
-    this.sendAction('action', context);
+    this.action(context);
   },
 });

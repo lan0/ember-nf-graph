@@ -92,7 +92,7 @@ test('calling didAutoUpdateMaxX() should send the graph instance over autoScaleX
 
   var graph = this.subject({
     xDataExtent: [1,2],
-    sendAction() {
+    autoScaleXAction() {
       calledWith = [].slice.call(arguments);
     }
   });
@@ -101,7 +101,7 @@ test('calling didAutoUpdateMaxX() should send the graph instance over autoScaleX
     graph.didAutoUpdateMaxX();
   });
 
-  assert.deepEqual(calledWith, ['autoScaleXAction', graph]);
+  assert.deepEqual(calledWith, [graph]);
 });
 
 test('calling didAutoUpdateMinX() should send the graph instance over autoScaleXAction', function(assert){
@@ -111,7 +111,7 @@ test('calling didAutoUpdateMinX() should send the graph instance over autoScaleX
 
   var graph = this.subject({
     xDataExtent: [1,2],
-    sendAction() {
+    autoScaleXAction() {
       calledWith = [].slice.call(arguments);
     }
   });
@@ -120,7 +120,7 @@ test('calling didAutoUpdateMinX() should send the graph instance over autoScaleX
     graph.didAutoUpdateMinX();
   });
 
-  assert.deepEqual(calledWith, ['autoScaleXAction', graph]);
+  assert.deepEqual(calledWith, [graph]);
 });
 
 //-----
@@ -133,7 +133,7 @@ test('calling didAutoUpdateMinY() should send the graph instance over autoScaleY
 
   var graph = this.subject({
     yDataExtent: [1,2],
-    sendAction() {
+    autoScaleYAction() {
       calledWith = [].slice.call(arguments);
     }
   });
@@ -142,7 +142,7 @@ test('calling didAutoUpdateMinY() should send the graph instance over autoScaleY
     graph.didAutoUpdateMinY();
   });
 
-  assert.deepEqual(calledWith, ['autoScaleYAction', graph]);
+  assert.deepEqual(calledWith, [graph]);
 });
 
 test('calling didAutoUpdateMaxY() should send yDataExtent over autoScaleYAction', function(assert){
@@ -152,7 +152,7 @@ test('calling didAutoUpdateMaxY() should send yDataExtent over autoScaleYAction'
 
   var graph = this.subject({
     yDataExtent: [1,2],
-    sendAction() {
+    autoScaleYAction() {
       calledWith = [].slice.call(arguments);
     }
   });
@@ -161,7 +161,7 @@ test('calling didAutoUpdateMaxY() should send yDataExtent over autoScaleYAction'
     graph.didAutoUpdateMaxY();
   });
 
-  assert.deepEqual(calledWith, ['autoScaleYAction', graph]);
+  assert.deepEqual(calledWith, [graph]);
 });
 
 

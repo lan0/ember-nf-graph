@@ -172,7 +172,7 @@ export default Component.extend(RegisteredGraphic, DataGraphic, RequireScaleSour
   actions: {
     nfBarClickBar: function(dataPoint) {
       if(this.get('barClick')) {
-        this.sendAction('barClick', {
+        this.barClick({
           data: dataPoint.data,
           x: dataPoint[0],
           y: dataPoint[1],

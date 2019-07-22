@@ -137,7 +137,7 @@ export default Component.extend({
     this.trigger('didHoverChange', context);
 
     if(this.get('hoverChange')) {
-      this.sendAction('hoverChange', context);
+      this.hoverChange(context);
     }
   },
 
@@ -158,7 +158,7 @@ export default Component.extend({
     this.trigger('didHoverEnd', context);
 
     if(this.get('hoverEnd')) {
-      this.sendAction('hoverEnd', context);
+      this.hoverEnd(context);
     }
   },
 
